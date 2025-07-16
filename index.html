@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Matcha Collective - Wholesale Ceremonial & Culinary Matcha</title>
+    <meta name="description" content="India's leading wholesaler of premium, ceremonial, and culinary grade matcha, sourced directly for unparalleled freshness and quality.">
+
+    <style>
+        /* FONT IMPORTS */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@400;500;600;700&display=swap');
+
+        /* BRAND COLORS & TYPOGRAPHY */
+        :root {
+            --primary-bg: #F4F3EE; /* Off-White/Beige */
+            --secondary-bg: #A3B18A; /* Sage Green */
+            --accent-color: #3A5A40; /* Matcha Green */
+            --heading-text: #344E41; /* Dark Forest Green */
+            --body-text: #585858; /* Charcoal Grey */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Lora', serif;
+        }
+
+        /* RESET & DEFAULTS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--body-text);
+            background-color: var(--primary-bg);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--heading-text);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        h2 { font-size: 2.25rem; margin-bottom: 2rem; text-align: center; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+        p { margin-bottom: 1rem; }
+        a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
+        img { max-width: 100%; display: block; }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* HEADER & NAVIGATION */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            background-color: rgba(244, 243, 238, 0.85); /* Semi-transparent Off-White */
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(52, 78, 65, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--heading-text);
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--heading-text);
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            color: white;
+            padding-top: 80px; /* Offset for fixed header */
+            /* Hero Background Image (1920x1080) - Placeholder using a gradient */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://via.placeholder.com/1920x1080.png/344E41/FFFFFF?text=Hero+Background+Image') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 { color: #FFFFFF; font-weight: 700; font-size: 3.5rem; }
+        .hero p { font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            border-radius: 5px;
+            font-family: var(--font-heading);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #4a6f53; /* Darker accent green */
+            transform: translateY(-2px);
+        }
+
+        /* WHY MATCHA SECTION */
+        #why-matcha { background-color: var(--primary-bg); }
+        .why-matcha-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .why-matcha-layout img {
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .section-subtitle {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        #why-matcha h2 { text-align: left; }
+
+        /* OUR QUALITY SECTION */
+        #quality { background-color: var(--secondary-bg); }
+        #quality h2, #quality p.section-intro { color: var(--heading-text); text-align: center;}
+        #quality p.section-intro { max-width: 700px; margin: -1rem auto 3rem auto; color: #344E41; }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .quality-card {
+            background-color: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .quality-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .quality-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem auto;
+            border: 4px solid var(--secondary-bg);
+        }
+
+        /* SUSTAINABILITY SECTION */
+        .sustainability-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        /* FOOTER */
+        #contact {
+            background-color: var(--heading-text);
+            color: var(--primary-bg);
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        #contact h2 { color: #FFFFFF; }
+        .contact-info { margin: 2rem 0; }
+        .contact-info p { margin-bottom: 0.5rem; color: rgba(244, 243, 238, 0.8); }
+        .contact-info a { color: var(--primary-bg); font-weight: normal; border-bottom: 1px dotted rgba(244, 243, 238, 0.5); transition: color 0.3s ease; }
+        .contact-info a:hover { color: var(--secondary-bg); }
+        .footer-closing { font-family: var(--font-heading); font-weight: 500; font-size: 1.1rem; color: #FFFFFF; }
+
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.8rem; }
+            h2 { font-size: 2rem; }
+            
+            .nav-menu { display: none; /* For simplicity, hiding menu on mobile. A JS solution would be needed for a hamburger menu */ }
+
+            .why-matcha-layout, .sustainability-layout {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .why-matcha-layout img {
+                grid-row: 1; /* Puts image on top on mobile */
+            }
+
+            .quality-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="#home" class="nav-logo">India Matcha</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#why-matcha" class="nav-link">Why Matcha?</a></li>
+                    <li><a href="#quality" class="nav-link">Our Quality</a></li>
+                    <li><a href="#sustainability" class="nav-link">Sustainability</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>The Art of Matcha: Pure, Potent, and Perfectly Balanced.</h1>
+                <p>Discover India's finest ceremonial and culinary grade matcha, sourced directly for unparalleled freshness and quality.</p>
+                <a href="#quality" class="btn">Explore Our Grades</a>
+            </div>
+        </section>
+
+        <section id="why-matcha">
+            <div class="container why-matcha-layout">
+                <div class="why-matcha-text">
+                    <p class="section-subtitle">A Superior Sip</p>
+                    <h2>Calm Energy, Clear Focus.</h2>
+                    <p>While coffee offers a jarring spike of energy, matcha provides a state of calm alertness. This is thanks to L-theanine, a unique amino acid that works in synergy with caffeine. It smooths out the energy release, fostering sustained focus and mental clarity without the anxiety, jitters, or the inevitable afternoon crash associated with other caffeinated drinks. It's not just energy; it's balanced, mindful vitality.</p>
+                </div>
+                <div class="why-matcha-image">
+                    <img src="https://via.placeholder.com/800x800.png/A3B18A/344E41?text=Calm+Focus+Image" alt="A serene flat lay of a matcha bowl and bamboo whisk.">
+                </div>
+            </div>
+        </section>
+
+        <section id="quality">
+            <div class="container">
+                <p class="section-subtitle" style="text-align:center;">The Mark of Excellence</p>
+                <h2>From Ancient Rituals to Modern Kitchens.</h2>
+                <p class="section-intro">We offer three distinct grades of matcha, each tailored for a specific purpose, ensuring the perfect experience every time.</p>
+                <div class="quality-grid">
+                    <div class="quality-card">
+                        <img src="https://via.placeholder.com/600x600.png/3A5A40/FFFFFF?text=Ceremonial" alt="Vibrant green ceremonial grade matcha powder.">
+                        <h3>Ceremonial Grade</h3>
+                        <p>Our highest grade, reserved for traditional preparation. It boasts a brilliant, vibrant green hue and a complex, umami-rich flavour profile with a smooth, creamy finish and no bitterness. This is matcha in its purest form.</p>
+                    </div>
+                    <div class="quality-card">
+                        <img src="https://via.placeholder.com/600x600.png/5C825E/FFFFFF?text=Premium" alt="Rich green premium grade matcha powder.">
+                        <h3>Premium Grade</h3>
+                        <p>A versatile, high-quality choice perfect for daily drinking, lattes, and premium beverages. It maintains a beautiful green color and a robust flavour that is bold yet smooth, with minimal astringency.</p>
+                    </div>
+                    <div class="quality-card">
+                        <img src="https://via.placeholder.com/600x600.png/8AA88E/344E41?text=Culinary" alt="A matcha latte and pastry, representing culinary grade matcha.">
+                        <h3>Culinary Grade</h3>
+                        <p>Specially blended for cooking and baking. Its stronger, more astringent flavour profile shines through in recipes, from smoothies and desserts to sauces. It imparts a rich green color and a distinct matcha taste to your creations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sustainability">
+            <div class="container">
+                <p class="section-subtitle" style="text-align:center;">Mindful Consumption</p>
+                <h2>The Green Wave in India.</h2>
+                <div class="sustainability-layout">
+                    <div>
+                        <h3>A Health-Conscious Shift</h3>
+                        <p>Across India's bustling cities, from Bengaluru to Mumbai, a quiet revolution is brewing. Health-conscious consumers are moving beyond transient fads and embracing mindful wellness practices. Matcha, with its deep cultural roots and scientifically-backed benefits, has become the beverage of choice for those seeking both vitality and tranquility in their daily lives.</p>
+                    </div>
+                    <div>
+                        <h3>Less Waste, More Goodness</h3>
+                        <p>This shift is also an environmentally conscious one. Unlike coffee, where grounds are discarded, or tea, which often comes in single-use bags, matcha utilizes the entire tea leaf. The leaves are stone-ground into a fine powder and consumed whole, leading to maximum nutrient absorption and minimal waste. It's a simple, elegant practice that is as kind to the planet as it is to your body.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <div class="contact-info">
+                <p>For wholesale inquiries and partnerships:</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@indiamatchacollective.com">contact@indiamatchacollective.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+919900000000">+91 99XXXX XXXX</a></p>
+                <p><strong>Social:</strong> <a href="#" target="_blank">Instagram</a> / <a href="#" target="_blank">LinkedIn</a></p>
+            </div>
+            <p class="footer-closing">Join the matcha movement.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
